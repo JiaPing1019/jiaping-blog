@@ -2,7 +2,8 @@ const siteMetadata = {
   title: "JiaPing's Blog",
   author: 'JiaPing',
   headerTitle: "JiaPing's Blog",
-  description: 'A blog created with Next.js and Tailwind.css',
+  description:
+    'Graduate from computer science departments. I have experience in web development in e-commerce, HR tech, and the fintech-related industry. I mainly code in Ruby (Ruby on Rails) and Javascript (React and jQuery) these days but also embrace the challenge of different programming languages and frameworks. Since I believe there is no end to learning new things as an engineer.',
   language: 'en-us',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/JiaPing.jpg',
