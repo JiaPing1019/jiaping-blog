@@ -20,6 +20,7 @@ import remarkImgToJsx from './remark-img-to-jsx'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeKatex from 'rehype-katex'
+import rehypeCitation from 'rehype-citation'
 import rehypePrismPlus from 'rehype-prism-plus'
 
 const root = process.cwd()
@@ -50,27 +51,16 @@ export async function getFileBySlug<T>(type: 'authors' | 'blog', slug: string | 
 
   // https://github.com/kentcdodds/mdx-bundler#nextjs-esbuild-enoent
   if (process.platform === 'win32') {
-    process.env.ESBUILD_BINARY_PATH = path.join(
-      process.cwd(),
-      'node_modules',
-      'esbuild',
-      'esbuild.exe'
-    )
+    process.env.ESBUILD_BINARY_PATH = path.join(root, 'node_modules', 'esbuild', 'esbuild.exe')
   } else {
-    process.env.ESBUILD_BINARY_PATH = path.join(
-      process.cwd(),
-      'node_modules',
-      'esbuild',
-      'bin',
-      'esbuild'
-    )
+    process.env.ESBUILD_BINARY_PATH = path.join(root, 'node_modules', 'esbuild', 'bin', 'esbuild')
   }
 
   const toc: Toc = []
 
   const { frontmatter, code } = await bundleMDX(source, {
     // mdx imports can be automatically source from the components directory
-    cwd: path.join(process.cwd(), 'components'),
+    cwd: path.join(root, 'components'),
     xdmOptions(options) {
       // this is the recommended way to add custom remark/rehype plugins:
       // The syntax might look weird, but it protects you in case we add/remove
