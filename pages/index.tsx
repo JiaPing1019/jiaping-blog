@@ -33,7 +33,8 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
             {siteMetadata.description}
           </p>
         </div>
-        <ul className="divide-y divide-gray-200 dark:divide-gray-700">
+        {/* NOTE: Comment out temporarily */}
+        {/* <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter
@@ -83,12 +84,12 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
               </li>
             )
           })}
-        </ul>
+        </ul> */}
       </div>
       {posts.length > MAX_DISPLAY && (
         <div className="flex justify-end text-base font-medium leading-6">
           <Link
-            href="/blog"
+            href="/projects"
             className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
             aria-label="all posts"
           >
@@ -96,11 +97,12 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
           </Link>
         </div>
       )}
-      {siteMetadata.newsletter.provider !== '' && (
+      {/* NOTE: Comment out temporarily */}
+      {/* {siteMetadata.newsletter.provider !== '' && (
         <div className="flex items-center justify-center pt-4">
           <NewsletterForm />
         </div>
-      )}
+      )} */}
     </>
   )
 }

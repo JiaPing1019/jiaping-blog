@@ -1,7 +1,7 @@
 ---
 name: JiaPing Hsu
 avatar: /static/images/jiaping.jpg
-occupation: Full Stack Engineer
+occupation: Software Engineer
 email: jumpping4@gmail.com
 linkedin: https://www.linkedin.com/in/jiaping-h-a2654790/
 github: https://github.com/JiaPing1019
